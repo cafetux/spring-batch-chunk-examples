@@ -33,4 +33,12 @@ public class Person {
         this.sexe = sexe;
     }
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", sexe='" + sexe + '\'' +
+                '}';
+    }
 }
