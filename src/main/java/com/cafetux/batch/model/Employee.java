@@ -11,11 +11,36 @@ public class Employee {
     private String sexe;
     private String email;
 
-    public Employee(Person item) {
-        this.firstName=item.getFirstName();
-        this.lastName=item.getLastName();
-        this.sexe=item.getSexe();
-        this.email=firstName.concat(".").concat(lastName).concat("@entrepriseDomain.com");
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getSexe() {
+        return sexe;
+    }
+
+    public void setSexe(String sexe) {
+        this.sexe = sexe;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     @Override

@@ -33,5 +33,7 @@
     <!-- Un simple listener qui Loggue lorsqu'une entrée est lue -->
     <bean id="simpleReaderListener" class="com.cafetux.batch.listener.LogItemReaderListener"/>
 
+    <bean id="itemToPersonProcessor" class="com.cafetux.batch.processor.PersonToEmployeeProcessor"/>
+    <bean id="emailGeneratorProcessor" class="com.cafetux.batch.processor.EmailGenerationProcessor"/>
 
 </beans>
