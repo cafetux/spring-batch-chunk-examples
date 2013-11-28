@@ -4,7 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd">
 
     <!-- Un simple writer qui écrit un employé dans les logs et simule un temps de traitement-->
-   <bean id="simpleConsoleWriter" class="com.cafetux.batch.writer.SimpleLogWriter" />
+    <bean id="simpleConsoleWriter" class="com.cafetux.batch.writer.SimpleLogWriter" />
+    <!-- Un simple writer qui écrit un employé dans les logs et simule un temps de traitement (prend des futures en paramétre)-->
+    <bean id="simpleConsoleFutureWriter" class="com.cafetux.batch.writer.SimpleLogFutureWriter" />
 
     <!-- Reader qui lit des personnes dans un fichier CSV -->
     <bean id="cvsItemReader" class="org.springframework.batch.item.file.FlatFileItemReader">
@@ -36,4 +38,7 @@
     <bean id="itemToPersonProcessor" class="com.cafetux.batch.processor.PersonToEmployeeProcessor"/>
     <bean id="emailGeneratorProcessor" class="com.cafetux.batch.processor.EmailGenerationProcessor"/>
 
+    <bean id="taskExecutor" class="org.springframework.core.task.SimpleAsyncTaskExecutor">
+        <property name="concurrencyLimit" value="10"/>
+    </bean>
 </beans>
